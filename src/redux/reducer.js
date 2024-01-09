@@ -1,6 +1,6 @@
 
 import { ADD_FRUIT } from "./actionType";
-const initState = {cart:[{id:1,fruit:"🍒",quantity : 3}]};
+const initState = {cart:[]};
 
 export const fruitReducer = (state = initState,action) =>{
 
@@ -9,6 +9,7 @@ export const fruitReducer = (state = initState,action) =>{
         return {...state,cart:[...state.cart,action.payload]}
 
         default :
+
         return state
     }
 
