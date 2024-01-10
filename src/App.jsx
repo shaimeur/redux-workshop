@@ -1,8 +1,10 @@
 
 import './App.css'
+import Cart from './components/Cart';
 // import { ADD_FRUIT } from './redux/actionType';
 import {legacy_createStore as createStore} from "redux"
 import { fruitReducer } from './redux/reducer';
+import {Provider} from "react-redux"
 import { addFruit, deleteFruit,updateQuantityFruit,incrementByOne,decrementByOne,clearAll } from './redux/action';
 
 // State Structure minumum require :
@@ -42,12 +44,15 @@ function App() {
 
   return (
     <>
-
-      <ul>
+    <Provider store={store}>
+      <Cart/>
+      {/* <ul>
         {store.getState().cart.map((item)=>(
           <li key={item.id}> the fruit is   {item.fruit} quantity is : {item.quantity}</li>
-        ))}
-      </ul>
+          ))}
+      </ul> */}
+
+    </Provider>
 
     </>
   )
