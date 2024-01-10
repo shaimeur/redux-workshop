@@ -5,7 +5,7 @@ import Cart from './components/Cart';
 import {legacy_createStore as createStore} from "redux"
 import { fruitReducer } from './redux/reducer';
 import {Provider} from "react-redux"
-import { addFruit, deleteFruit,updateQuantityFruit,incrementByOne,decrementByOne,clearAll } from './redux/action';
+// import { addFruit, deleteFruit,updateQuantityFruit,incrementByOne,decrementByOne,clearAll } from './redux/action';
 
 // State Structure minumum require :
 
@@ -23,14 +23,14 @@ import { addFruit, deleteFruit,updateQuantityFruit,incrementByOne,decrementByOne
 
 const store = createStore(fruitReducer);
 
-const unsubscribe = store.subscribe(()=>console.log(store.getState()))
+const unsubscribe = store.subscribe(() => console.log(store.getState()))
 
 // store.dispatch({type:"ADD_FRUIT",payload:{id:1,fruit:'🫐',quantity:10}})
 // store.dispatch({type:"ADD_FRUIT",payload:{id:2,fruit:'🍉',quantity:10}})
 
-store.dispatch(addFruit(12,'🍑',2))
-store.dispatch(addFruit(1,'🫐',12))
-store.dispatch(addFruit(2,'🍉',8))
+// store.dispatch(addFruit(12,'🍑',2))
+// store.dispatch(addFruit(1,'🫐',12))
+// store.dispatch(addFruit(2,'🍉',8))
 // store.dispatch(deleteFruit(12))
 // store.dispatch(updateQuantityFruit(1,200))
 // store.dispatch(incrementByOne(2))
