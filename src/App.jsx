@@ -1,6 +1,7 @@
 
 import './App.css'
 import Cart from './components/Cart';
+import AddFruits from './components/AddFruits';
 // import { ADD_FRUIT } from './redux/actionType';
 import {legacy_createStore as createStore} from "redux"
 import { fruitReducer } from './redux/reducer';
@@ -45,6 +46,7 @@ function App() {
   return (
     <>
     <Provider store={store}>
+      <AddFruits/>
       <Cart/>
       {/* <ul>
         {store.getState().cart.map((item)=>(

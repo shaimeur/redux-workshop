@@ -1,6 +1,6 @@
 
 import { ADD_FRUIT, CLEAR_ALL, DECREMENT_BY_ONE, DELETE_FRUIT,INCREMENT_BY_ONE,UPDATE_QUANTITY_FRUIT } from "./actionType";
-const initState = {cart:[{id:100,fruit:'🍉',quantity:2}],user:{id:1,name:"saad"}};
+const initState = {cart:[{id:100,fruit:'🍒',quantity:2}],user:{id:1,name:"saad"}};
 
 export const fruitReducer = (state = initState,action) =>{
 
@@ -29,7 +29,7 @@ export const fruitReducer = (state = initState,action) =>{
             }
         case CLEAR_ALL :
             return {...state,
-                cart : state.cart.map((item) => item.id === action.payload? {...item,quantity:0}:item)
+                cart : []
             }
         default :
         return state

@@ -37,6 +37,6 @@ export const decrementByOne = (id) =>{
 export const clearAll = (id) =>{
     return {
         type:CLEAR_ALL,
-        payload : id
+
     }
 }
