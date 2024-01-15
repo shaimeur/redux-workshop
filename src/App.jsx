@@ -46,8 +46,8 @@ function App() {
   return (
     <>
     <Provider store={store}>
-      <AddFruits/>
       <Cart/>
+      <AddFruits/>
       {/* <ul>
         {store.getState().cart.map((item)=>(
           <li key={item.id}> the fruit is   {item.fruit} quantity is : {item.quantity}</li>
