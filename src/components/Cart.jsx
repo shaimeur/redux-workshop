@@ -1,7 +1,8 @@
 import { useEffect,useState } from "react"
 import {connect} from "react-redux"
-import { incrementByOne ,decrementByOne } from "../redux/action"
-const Cart = ({fruits,incrementItem,decrementItem}) =>{
+import { incrementByOne ,decrementByOne,deleteFruit } from "../redux/action"
+import AddFruits from "./AddFruits"
+const Cart = ({fruits,incrementItem,decrementItem,deleteItem}) =>{
 
  const [item,setItem] = useState({id:1,fruit:"",quantity:0})
 
@@ -22,6 +23,7 @@ const Cart = ({fruits,incrementItem,decrementItem}) =>{
                     <div key={item.id} className="w-52 mt-1 p-1 border-orange-400 bg-red-400 rounded">
 
                         <span className="inline-block w-16 border-indigo-900"> id: {item.id} product : {item.fruit} Qantity : {item.quantity} </span>
+                        <button className="rounded bg-yellow-400 px-2" onClick={()=>deleteItem(item.id)}>x</button>
                         <button className="rounded bg-green-400 px-2" onClick={()=>incrementItem(item.id)}>+</button>
                         <button className="rounded bg-red-800 px-2"  onClick={()=>decrementItem(item.id)}>-</button>
 
@@ -44,6 +46,9 @@ const mapDispatchToProps = (dispatch)=>{
     },
     decrementItem : function(id){
         dispatch(decrementByOne(id))
+    },
+    deleteItem : function(id){
+        dispatch(deleteFruit(id))
     }
    }
 

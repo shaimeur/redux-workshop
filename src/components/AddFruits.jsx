@@ -8,7 +8,7 @@ const AddFruits = ({AddMyFruit,Clear}) =>{
     useEffect(()=>{
         console.log(">>>>>>>>",addFruit)
         console.log(myFruit)
-    })
+    },[myFruit])
 
     const handleChange = (e) =>{
         const {value,name} = e.target
@@ -42,8 +42,8 @@ const mapDispatchToProps = (dispatch) =>{
         AddMyFruit : function(id,fruit,quantity){
             dispatch(addFruit(id,fruit,quantity))
         },
-        Clear : function(id){
-            dispatch(clearAll(id))
+        Clear : function(){
+            dispatch(clearAll())
         }
     }
 }

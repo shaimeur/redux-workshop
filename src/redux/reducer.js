@@ -12,7 +12,7 @@ export const fruitReducer = (state = initState,action) =>{
 
         case DELETE_FRUIT :
         return {...state,
-            cart : state.cart.filter((item)=>item.id !== parseInt(action.payload))
+            cart : state.cart.filter((item)=>+item.id !== parseInt(action.payload))
         }
 
         case UPDATE_QUANTITY_FRUIT:
